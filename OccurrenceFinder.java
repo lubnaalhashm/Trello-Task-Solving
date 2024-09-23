@@ -1,4 +1,4 @@
-public class Method {
+public class OccurrenceFinder {
     public int countOccurrences(String str, String substr) {
         int count = 0;
         int index = 0;
@@ -13,7 +13,7 @@ public class Method {
     }
 
     public static void main(String[] args) {
-        Method method = new Method();
+        OccurrenceFinder method = new OccurrenceFinder();
         System.out.println(method.countOccurrences("banana", "ana"));
     }
 }
