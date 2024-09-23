@@ -1,4 +1,4 @@
-public class Method2 {
+public class LongestWordFinder {
     public String longestWord(String sentence) {
         String[] words = sentence.split(" ");
         String longestWord = "";
@@ -18,7 +18,7 @@ public class Method2 {
     }
 
     public static void main(String[] args) {
-        Method2 method = new Method2();
+        LongestWordFinder method = new LongestWordFinder();
         System.out.println(method.longestWord("The quick brown fox jumped over the lazy dog"));
     }
 }
