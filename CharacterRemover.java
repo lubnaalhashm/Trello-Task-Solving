@@ -1,8 +1,7 @@
 public class CharacterRemover {
 
-    public String removeCharacter(String str, char ch) {
+    public static String removeCharacter(String str, char ch) {
         StringBuilder result = new StringBuilder();
-
 
         for (int i = 0; i < str.length(); i++) {
             char currentChar = str.charAt(i);
@@ -16,7 +15,6 @@ public class CharacterRemover {
     }
 
     public static void main(String[] args) {
-        CharacterRemover remover = new CharacterRemover();
-        System.out.println(remover.removeCharacter("hello world", 'l'));
+        System.out.println(removeCharacter("hello world", 'l'));
     }
 }
