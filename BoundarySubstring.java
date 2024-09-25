@@ -9,11 +9,10 @@ public class BoundarySubstring {
     }
 
     public static void main(String[] args) {
-        BoundarySubstring trimmer = new BoundarySubstring();
+        BoundarySubstring handler = new BoundarySubstring();
 
-        System.out.println(trimmer.without2("HelloHe"));  // Output: "lloHe"
-        System.out.println(trimmer.without2("HelloHi"));  // Output: "HelloHi"
-        System.out.println(trimmer.without2("Hi"));
+        System.out.println(handler.without2("HelloHe"));  // Output: "lloHe"
+        System.out.println(handler.without2("HelloHi"));  // Output: "HelloHi"
+        System.out.println(handler.without2("Hi"));       // Output: ""
     }
 }
-
