@@ -1,4 +1,4 @@
-public class FirstLastSix {
+public class BeganEnd6 {
     public static void main(String[] args) {
         // Test cases
         System.out.println(firstLast6(new int[]{1, 2, 6})); // → true
