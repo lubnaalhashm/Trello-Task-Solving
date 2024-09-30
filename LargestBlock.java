@@ -6,7 +6,7 @@ public class LargestBlock {
     }
 
     public static int maxBlock(String str) {
-        int TheLargestBS = 0;
+        int theLargestBS = 0;
         int CurrentBS = 1;
 
         // Return 0 for an empty string
@@ -21,14 +21,14 @@ public class LargestBlock {
                 CurrentBS++;  // Increment current block size
             } else {
 
-                TheLargestBS = Math.max(TheLargestBS, CurrentBS);
+                theLargestBS = Math.max(theLargestBS, CurrentBS);
                 CurrentBS = 1;  // Reset current block size for new character
             }
         }
 
         // Final check for the last block
-        TheLargestBS = Math.max(TheLargestBS, CurrentBS);
+        theLargestBS = Math.max(theLargestBS, CurrentBS);
 
-        return TheLargestBS;  // Return the size of the largest block
+        return theLargestBS;  // Return the size of the largest block
     }
 }
