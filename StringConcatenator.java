@@ -1,36 +1,19 @@
-public class StringConcatenator {
+public class StringConcatenator{
 
-    public static int largestOrZero(int a, int b, int c) {
-        int[] nums = {a, b, c};
-        int largest = nums[0];
+    public static String minCat(String a, String b) {
+        // Determine the lengths of the input strings
+        int lengthA = a.length();
+        int lengthB = b.length();
 
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] > largest) {
-                largest = nums[i];
-            }
-        }
+        // Find the minimum length
+        int minLength = Math.min(lengthA, lengthB);
 
-        // Check if any two numbers are the same
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] == nums[j]) {
-                    return 0;
-                }
-            }
-        }
-
-        return largest;
+        return a.substring(lengthA - minLength) + b.substring(0, minLength);
     }
 
     public static void main(String[] args) {
-        // Test cases
-        int[][] testCases = {
-                {3, 2, 5},
-        };
-
-        // Using a for loop
-        for (int[] testCase : testCases) {
-            System.out.println(largestOrZero(testCase[0], testCase[1], testCase[2]));
-        }
+        System.out.println(minCat("Hello", "Hi"));
+        System.out.println(minCat("Hello", "java"));
+        System.out.println(minCat("java", "Hello"));
     }
 }
