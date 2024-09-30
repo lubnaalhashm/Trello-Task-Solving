@@ -1,11 +1,11 @@
-public class Character {
+public class DetermineEverygCharacter {
     public static void main(String[] args) {
         String str = "xxgx";
 
-        System.out.println(gHappy(str)); // Print the result
+        System.out.println(areGCharactersHappy(str)); // Print the result
     }
 
-    public static boolean gHappy(String str) {
+    public static boolean areGCharactersHappy(String str) {
         char[] charArray = str.toCharArray();
 
         for (int i = 0; i < charArray.length; i++) {
