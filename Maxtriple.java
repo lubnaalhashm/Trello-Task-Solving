@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Maxtriple {
+public class findingMaxTriple {
     public static void main(String[] args) {
         // Initializtion
         int[][] arrays = {
