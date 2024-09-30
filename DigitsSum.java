@@ -1,5 +1,4 @@
 public class DigitsSum {
-
     public static int sumDigits(String str) {
         int sum = 0;
         String[] Array = str.split(""); // Split the string
@@ -10,9 +9,7 @@ public class DigitsSum {
         }
         return sum;
     }
-
     public static void main(String[] args) {
         System.out.println(sumDigits("aa11b33"));
-
     }
 }
