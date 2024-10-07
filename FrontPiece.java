@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class FrontPiece {
 
     public static void main(String[] args) {
@@ -21,13 +23,6 @@ public class FrontPiece {
     }
 
     public static void printArray(int[] arr) {
-        System.out.print("[");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]);
-            if (i < arr.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println("]");
+        System.out.println(Arrays.toString(arr)); // Using Arrays.toString() to print the array
     }
 }
