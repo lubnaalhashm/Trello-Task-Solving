@@ -4,10 +4,9 @@ public class StackUsingArray {
     static ArrayList<Integer> stack = new ArrayList<>();
 
     public static void main(String[] args) {
+        push(10);
         push(20);
         push(30);
-        push(40);
-        push(50);
         printStack();
         pop();
         printStack();
@@ -26,9 +25,9 @@ public class StackUsingArray {
     public static void pop() {
         if (!stack.isEmpty()) {
             Integer removedElement = stack.remove(stack.size() - 1);
-            System.out.println("Removing element: " + removedElement);
+            System.out.println("Popping element: " + removedElement);
         } else {
-            System.out.println(" Cannot pop.");
+            System.out.println("Stack is empty. Cannot pop.");
         }
     }
 
@@ -40,7 +39,7 @@ public class StackUsingArray {
         if (!stack.isEmpty()) {
             System.out.println("Element at the top: " + stack.get(stack.size() - 1));
         } else {
-            System.out.println(" No top element.");
+            System.out.println("Stack is empty. No top element.");
         }
     }
 }
