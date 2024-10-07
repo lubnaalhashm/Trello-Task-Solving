@@ -2,26 +2,29 @@ import java.util.Stack;
 
 public class MaxStackFinding {
     static Stack<Integer> stack = new Stack<>();
-    static int currentMax = Integer.MIN_VALUE;
 
     public static void main(String[] args) {
-        push(2);
-        push(1);
-        push(5);
-        push(4);
-        System.out.println("Maximum in the stack: " + findMaximum());
+        pushElement(3);
+        pushElement(6);
+        pushElement(4);
+        printMaximum();
     }
 
-    public static void push(int number) {
-        if (number > currentMax) {
-            currentMax = number;
+    public static void pushElement(int element) {
+        stack.push(element);  // Using push
+    }
+
+    public static void printMaximum() {
+        if (!stack.isEmpty()) {
+            int maxElement = stack.get(0);  // Initialize with the first element
+            for (int i = 1; i < stack.size(); i++) {
+                if (stack.get(i) > maxElement) {
+                    maxElement = stack.get(i);
+                }
+            }
+            System.out.println("The maximum element is: " + maxElement);
+        } else {
+            System.out.println("Stack is empty.");
         }
-        // Pushing
-        stack.push(number);
-    }
-
-    public static Integer findMaximum() {
-        // Return the current maximum
-        return stack.isEmpty() ? null : currentMax;
     }
 }
