@@ -7,11 +7,11 @@ public class DuplicatesChecking {
         Set<Integer> numbers = new HashSet<>();
         for (int num : nums) {
             if (numbers.contains(num)) {
-                return true;
+                return true; // in case if  number there it will return true
             }
-            numbers.add(num);
+            numbers.add(num); //Adding number to the set
         }
-        return false;
+        return false; // Return false in case no duplicates
     }
 
     public static void main(String[] args) {
