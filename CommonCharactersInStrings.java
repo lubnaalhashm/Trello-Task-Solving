@@ -2,22 +2,25 @@ import java.util.*;
 
     public class CommonCharactersInStrings {
         public static List<Character> findCommonCharacters(String str1, String str2) {
+            // Create an ArrayList
             List<Character> commonChars = new ArrayList<>();
+
+            // Creating a Set for storing unique
             Set<Character> set1 = new HashSet<>();
 
-            // Add characters of the first string to the set
+            // Adding characters
             for (char ch : str1.toCharArray()) {
                 set1.add(ch);
             }
 
-            // Check for common characters in the second string
+            // Checking the common characters
             for (char ch : str2.toCharArray()) {
                 if (set1.contains(ch) && !commonChars.contains(ch)) {
-                    commonChars.add(ch); // Add only if it's not already added
+                    commonChars.add(ch);
                 }
             }
 
-            return commonChars;
+            return commonChars; // Return common characters list
         }
 
         public static void main(String[] args) {
