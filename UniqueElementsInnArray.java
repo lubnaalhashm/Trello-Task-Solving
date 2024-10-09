@@ -6,8 +6,12 @@ import java.util.Set;
 public class UniqueElementsInnArray {
     public static void main(String[] args) {
         // Input array and some of the duplicate elements which is 1
-        int[] input = {1, 2, 3, 2, 1};
-
+        List<Integer> input = new ArrayList<>();
+        input.add(1);
+        input.add(2);
+        input.add(3);
+        input.add(2);
+        input.add(1);
         // Set to storing
         Set<Integer> uniqueSet = new HashSet<>();
 
