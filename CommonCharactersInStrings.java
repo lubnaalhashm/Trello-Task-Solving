@@ -24,9 +24,9 @@ import java.util.*;
         }
 
         public static void main(String[] args) {
-            String str1 = "hello";
+            String str1 = "HELLO";
             String str2 = "world";
-            List<Character> commonCharacters = findCommonCharacters(str1, str2);
+            List<Character> commonCharacters = findCommonCharacters(str1.toLowerCase(), str2.toLowerCase());
             System.out.println(commonCharacters);
         }
     }
