@@ -1,36 +1,26 @@
 import java.util.HashSet;
-import java.util.Scanner;
 import java.util.Set;
 
 public class FindPairWithSum {
-    public static boolean hasPairWithSum(int[] numbers, int num) {
-        Set<Integer> complements = new HashSet<>();
-        for (int number : numbers) {
-            int difference = num - number;
-            if (complements.contains(difference)) { //Check for the difference
+    public static boolean hasPairWithSum(Integer[] numbers, int target) {
+        Set<Integer> Numbers = new HashSet<>();
+
+        for (Integer number : numbers) {
+            int difference = target - number;
+            if (Numbers.contains(difference)) {
                 return true;
             }
-            complements.add(number); // Adding the number
+            Numbers.add(number); //Adding number
         }
-        return false; // if there is no pair it will return false
+
+        return false; // if there are no pairs , it will return false
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Integer[] input = {1, 4, 5, 7};
+        int target = 6;
 
-        System.out.println("Enter numbers:");
-        String[] input = scanner.nextLine().split(" ");
-        int[] numbers = new int[input.length];
-
-        for (int i = 0; i < input.length; i++) {
-            numbers[i] = Integer.parseInt(input[i]);
-        }
-        // print the output
-        System.out.println("Enter target sum:");
-        int targetSum = scanner.nextInt();
-
-        boolean result = hasPairWithSum(numbers, targetSum);
-        System.out.println(result);
-        scanner.close();
+        boolean result = hasPairWithSum(input, target);
+        System.out.println(result); // print the output
     }
 }
