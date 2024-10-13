@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class TwoArraysIntersection {
     public static void main(String[] args) {
 
-        // Define the second list
+        // Define the first list
         List<Integer> firstList = List.of(1, 2, 2, 3);
 
         // Define the second list
