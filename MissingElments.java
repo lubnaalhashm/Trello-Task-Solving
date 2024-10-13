@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class MissingElementsFinding {
+public class MissingElments {
     public static void main(String[] args) {
         int[] sortedNumbers = {1, 3, 5, 7};
         int startRange = 1;
