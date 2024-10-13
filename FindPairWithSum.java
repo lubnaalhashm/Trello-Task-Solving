@@ -3,17 +3,17 @@ import java.util.Set;
 
 public class FindPairWithSum {
     public static boolean hasPairWithSum(Integer[] numbers, int target) {
-        Set<Integer> Numbers = new HashSet<>();
+        Set<Integer> numbersSet = new HashSet<>();
 
         for (Integer number : numbers) {
             int difference = target - number;
-            if (Numbers.contains(difference)) {
+            if (numbersSet.contains(difference)) {
                 return true;
             }
-            Numbers.add(number); //Adding number
+            numbersSet.add(number); // Adding number
         }
 
-        return false; // if there are no pairs , it will return false
+        return false; // If there are no pairs, it will return false
     }
 
     public static void main(String[] args) {
@@ -21,6 +21,6 @@ public class FindPairWithSum {
         int target = 6;
 
         boolean result = hasPairWithSum(input, target);
-        System.out.println(result); // print the output
+        System.out.println(result); // Print the output
     }
 }
