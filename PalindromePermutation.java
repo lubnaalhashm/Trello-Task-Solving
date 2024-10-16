@@ -18,9 +18,9 @@ import java.util.Set;
             for (char c : str.toLowerCase().toCharArray()) {
                 if (Character.isLetterOrDigit(c)) {
                     if (uniqueChars.contains(c)) {
-                        uniqueChars.remove(c);  // Remove if it is an even
+                        uniqueChars.remove(c);  // Remove the count if it is an even
                     } else {
-                        uniqueChars.add(c);  // Add if it is odd count
+                        uniqueChars.add(c);  // Add the count if it is odd count
                     }
                 }
             }
