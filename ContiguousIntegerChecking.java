@@ -31,7 +31,7 @@ public class ContiguousIntegerChecking {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
 
-        // Find the minimum and maximum
+        // Finding the minimum and maximum
         for (int number : set) {
             if (number < min) {
                 min = number;
