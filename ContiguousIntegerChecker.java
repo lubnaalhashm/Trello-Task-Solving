@@ -2,7 +2,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class ContiguousIntegerChecking {
+public class ContiguousIntegerChecker {
 
     public static void main(String[] args) {
 
@@ -10,8 +10,9 @@ public class ContiguousIntegerChecking {
         Scanner scanner = new Scanner(System.in);
         Set<Integer> set = new HashSet<>();
 
-        System.out.println("Enter the number: ");
+        System.out.println("Enter the size of the set: ");
         int inputUser = scanner.nextInt();
+
 
         System.out.println("Enter the elements:");
 
