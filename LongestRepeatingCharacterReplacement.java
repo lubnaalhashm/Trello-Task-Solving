@@ -1,45 +1,43 @@
 import java.util.HashSet;
-import java.util.Set;
 
 public class LongestRepeatingCharacterReplacement {
-
     public static void main(String[] args) {
         String s = "AABABBA";
         int k = 1;
-        // Print the result
-        System.out.println(findLongestSubstring(s, k));
+        System.out.println(findMaxRepeatingSubstring(s, k)); // Output: 4
     }
 
-    public static int findLongestSubstring(String s, int k) {
+    public static int findMaxRepeatingSubstring(String c, int k) {
+        // Declaration and initialization
         int maxLength = 0;
-        int start = 0;
-        int maxRepeated = 0;
+        int left = 0;
+        int maxCount = 0;
+        HashSet<Character> charSet = new HashSet<>();
 
-        Set<Character> charSet = new HashSet<>();
-        Set<Character> counted = new HashSet<>();
+        for (int right = 0; right < c.length(); right++) {
+            charSet.add(c.charAt(right)); // Adding char to set
 
-        for (int i = 0; i < s.length(); i++) {
-            char character = s.charAt(i);
-            charSet.add(character); // Adding character to the set
+            int windowLength = right - left + 1; // window length
+            maxCount = Math.max(maxCount, countMaxFrequency(c, left, right)); // Updating the max frequency
 
-            // Here count the frequency
-            int freq = 0;
-            for (char c : charSet) {
-                if (c == character) {
-                    freq++;
-                }
-            }
-            maxRepeated = Math.max(maxRepeated, freq);
-
-
-            if (i - start + 1 - maxRepeated > k) {
-                charSet.remove(s.charAt(start)); // Removing the character
-                start++;
+            if (windowLength - maxCount > k) {
+                charSet.remove(c.charAt(left));
+                left++;
             }
 
-            maxLength = Math.max(maxLength, i - start + 1);
+            maxLength = Math.max(maxLength, right - left + 1); // Update max length
         }
+        return maxLength;
+    }
 
-        return maxLength; // Return the result
+    static int countMaxFrequency(String s, int left, int right) {
+        int[] count = new int[s.length()];
+        int maxFrequency = 0;
+
+        for (int i = left; i <= right; i++) {
+            count[s.charAt(i) - 'A']++; // Count chars
+            maxFrequency = Math.max(maxFrequency, count[s.charAt(i) - 'A']);
+        }
+        return maxFrequency; //return the result
     }
 }
