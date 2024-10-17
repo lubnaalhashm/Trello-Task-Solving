@@ -40,6 +40,6 @@ public class LongestRepeatingCharacterReplacement {
             maxLength = Math.max(maxLength, i - start + 1);
         }
 
-        return maxLength;
+        return maxLength; // Return the result
     }
 }
