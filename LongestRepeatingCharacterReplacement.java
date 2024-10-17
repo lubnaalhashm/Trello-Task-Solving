@@ -6,6 +6,7 @@ public class LongestRepeatingCharacterReplacement {
     public static void main(String[] args) {
         String s = "AABABBA";
         int k = 1;
+        // Print the result
         System.out.println(findLongestSubstring(s, k));
     }
 
@@ -19,7 +20,7 @@ public class LongestRepeatingCharacterReplacement {
 
         for (int i = 0; i < s.length(); i++) {
             char character = s.charAt(i);
-            charSet.add(character);
+            charSet.add(character); // Adding character to the set
 
             // Here count the frequency
             int freq = 0;
@@ -32,7 +33,7 @@ public class LongestRepeatingCharacterReplacement {
 
 
             if (i - start + 1 - maxRepeated > k) {
-                charSet.remove(s.charAt(start));
+                charSet.remove(s.charAt(start)); // Removing the character
                 start++;
             }
 
