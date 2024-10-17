@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class CountDistinctElements {
+public class DistinctElementsCounter {
     public static void main(String[] args) {
 
         //Declaration and initialization
