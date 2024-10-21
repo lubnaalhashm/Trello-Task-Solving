@@ -13,7 +13,7 @@ public class MapCombiner {
     }
 
     public static HashMap<Character, String> combineValues(HashMap<Character, String> mapAB) {
-        // Checking if 'a' and 'b' in the map
+        // Checking if 'a' and 'b' in  map
         if (mapAB.containsKey('a') && mapAB.containsKey('b')) {
 
             // Combine values of keys 'a' and 'b' and storing in the key 'c'
