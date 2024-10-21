@@ -5,21 +5,18 @@ public class MapCombiner {
     public static void main(String[] args) {
 
         //Creating hash map and adding value
-        HashMap<Character, String> inputMap = new HashMap<>();
-        inputMap.put('a', "Hi");
-        inputMap.put('b', "There");
+        HashMap<String, String> combineMap = new HashMap<>();
+        combineMap.put("a", "Hi");
+        combineMap.put("b", "There");
 
-        System.out.println("Modified map: " + combineValues(inputMap));
+        System.out.println("map modification: " + combineValues(combineMap));
     }
 
-    public static HashMap<Character, String> combineValues(HashMap<Character, String> mapAB) {
-        // Checking if 'a' and 'b' in  map
-        if (mapAB.containsKey('a') && mapAB.containsKey('b')) {
-
-            // Combine values of keys 'a' and 'b' and storing in the key 'c'
-            mapAB.put('c', mapAB.get('a') + mapAB.get('b'));
+    public static HashMap<String,String> combineValues(HashMap<String,String> mapAB) {
+        if (mapAB.containsKey("a") && mapAB.containsKey("b")) {
+            String value = mapAB.get("a")+mapAB.get("b");
+            mapAB.put("ab", value);
         }
-
         // Return the updated map
         return mapAB;
     }
