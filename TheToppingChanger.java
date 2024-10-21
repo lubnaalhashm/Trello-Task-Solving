@@ -9,13 +9,8 @@ public class TheToppingChanger {
 
     public static HashMap<String, String> fixToppings(HashMap<String, String> options) {
         // Check if the values in the map
-        if (options.containsKey("potato")) {
-            options.put("fries", options.get("potato"));
-        }
-
-        if (options.containsKey("salad")) {
-            options.put("spinach", options.get("salad"));
-        }
+        if (options.containsKey("potato")) {options.put("fries", options.get("potato"));}
+        if (options.containsKey("salad")) {options.put("spinach", options.get("salad"));}
         return options;
     }
 }
