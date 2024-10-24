@@ -21,7 +21,7 @@ public class ZeroCount {
 
         // using loop
         for (String key : keyArray) {
-            keysWithValueZero.putIfAbsent(key, 0);
+            keysWithValueZero.put(key, 0);
         }
 
         //return the map
