@@ -4,7 +4,10 @@
     public class LengthyValues {
 //creating map with adding values
         public static void main(String[] args) {
+            //* creating a hashmap
             HashMap<String, String> map = new HashMap<>();
+
+            //* adding values
             map.put("a", "aaa");
             map.put("b", "bbbb");
             map.put("c", "cake");
