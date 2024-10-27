@@ -1,7 +1,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-public class SwapStrings {
+public class StringOccurrences {
 
      public static void main(String[] args) {
 
