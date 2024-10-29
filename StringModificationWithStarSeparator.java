@@ -9,7 +9,7 @@ public class StringModificationWithStarSeparator {
      }
      else
      {
-        return str.substring(0,1) + "*" + allstar(str.substring(1)); //* Recursive case:
+        return str.substring(0,1) + "*" + allstar(str.substring(1)); //* Recursive case
      }
  }
 
