@@ -1,4 +1,3 @@
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -7,9 +6,11 @@ public class AdvancedSchoolSystem {
     static Map<String, Map<Integer, Map<String, Object>>> schoolData = new HashMap<>();
 
     public static void main(String[] args) {
+
+        //* taking input from user
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter number of schools: ");
+        System.out.print("Enter the number of the schools: ");
         int numOfSchools = sc.nextInt();
         sc.nextLine();
 
@@ -18,10 +19,10 @@ public class AdvancedSchoolSystem {
             System.out.print("School Name: ");
             String schoolName = sc.nextLine();
             System.out.print("School Address: ");
-            String address = sc.nextLine();
-            addSchool(schoolName, address);
+            String schoolAddress = sc.nextLine();
+            addSchool(schoolName, schoolAddress);
 
-            System.out.print("Enter the number of the students for " + schoolName + ": ");
+            System.out.print("Enter the number of the students " + schoolName);
             int numOfStudents = sc.nextInt();
             sc.nextLine();
 
@@ -39,12 +40,12 @@ public class AdvancedSchoolSystem {
                 sc.nextLine();
                 addStudent(schoolName, studentId, studentName, grade, age);
 
-                System.out.print("Enter number of subjects for Student " + studentId + ": ");
+                System.out.print("Enter number of subjects " + studentId);
                 int numOfSubjects = sc.nextInt();
                 sc.nextLine();
 
-                int k = 0;
-                while (k < numOfSubjects) {
+                int S = 0;
+                while (S < numOfSubjects) {
                     System.out.print("Subject Name: ");
                     String subjectName = sc.nextLine();
                     System.out.print("Teacher Name: ");
@@ -57,7 +58,7 @@ public class AdvancedSchoolSystem {
                     char subjectGrade = sc.next().charAt(0);
                     sc.nextLine();
                     addSubjectAndMarks(schoolName, studentId, subjectName, teacherName, creditHours, marks, subjectGrade);
-                    k++;
+                    S++;
                 }
                 j++;
             }
@@ -79,21 +80,25 @@ public class AdvancedSchoolSystem {
         System.out.println("Average Marks for Student " + studentId + ": " + averageMarks);
     }
 
-    private static void addSubjectAndMarks(String schoolName, int studentId, String subjectName, String teacherName, int creditHours, int marks, char subjectGrade) {
+    public static void addSubjectAndMarks(String schoolName, int studentId, String subjectName, String teacherName, int creditHours, int marks, char subjectGrade) {
     }
 
+    //* Method for adding schools to system
     public static void addSchool(String schoolName, String address) {
 
         schoolData.put(schoolName, new HashMap<>());
         System.out.println("Added school: " + schoolName);
     }
 
+    //* Method for adding students to a specific school
     public static void addStudent(String schoolName, int studentId, String studentName, char grade, int age) {
+        //* Checking if the school is there or not
         if (!schoolData.containsKey(schoolName)) {
             System.out.println("School not found.");
             return;
         }
 
+        //* Creating a hashmap for student
         Map<Integer, Map<String, Object>> students = schoolData.get(schoolName);
         Map<String, Object> studentInfo = new HashMap<>();
         studentInfo.put("name", studentName);
@@ -131,7 +136,7 @@ public class AdvancedSchoolSystem {
     public static Map<String, Object> getMarks(String schoolName, int studentId, String subjectName) {
         Map<Integer, Map<String, Object>> students = schoolData.get(schoolName);
         if (students == null || !students.containsKey(studentId)) {
-            System.out.println("Data not found for the provided school or student.");
+            System.out.println("Data not found.");
             return null;
         }
 
@@ -139,27 +144,27 @@ public class AdvancedSchoolSystem {
         Map<String, Map<String, Object>> subjects = (Map<String, Map<String, Object>>) studentInfo.get("subjects");
         return subjects.getOrDefault(subjectName, null);
     }
-
-    public static float calculateAverage(String schoolName, int studentId) {
+    //* Method for calculating the average
+    public static int calculateAverage(String schoolName, int studentId) {
         Map<Integer, Map<String, Object>> students = schoolData.get(schoolName);
 
         if (students == null || !students.containsKey(studentId)) {
-            System.out.println("Student with ID " + studentId + " in " + schoolName + " not exist");
+            System.out.println("Student with iD " + studentId + " in " + schoolName + " not exist");
             return 0;
         }
 
         Map<String, Object> studentInfo = students.get(studentId);
         Map<String, Map<String, Object>> subjects = (Map<String, Map<String, Object>>) studentInfo.get("subjects");
 
-        int totalMarks = 0;
-        int numOfSubjects = subjects.size();
+        int marks = 0;
+        int subjectNum = subjects.size();
 
-        for (Map<String, Object> subjectDetails : subjects.values()) {
-            totalMarks += (int) subjectDetails.get("marks");
+        for (Map<String, Object> subjectInfo : subjects.values()) {
+            marks += (int) subjectInfo.get("marks");
         }
 
-        if (numOfSubjects > 0) {
-            return (float) totalMarks / numOfSubjects;
+        if (subjectNum > 0) {
+            return (int) marks / subjectNum;
         } else {
             return 0;
         }
