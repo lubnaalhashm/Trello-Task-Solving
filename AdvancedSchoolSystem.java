@@ -76,7 +76,7 @@ public class AdvancedSchoolSystem {
         Map<String, Object> marksDetails = getMarks(schoolName, studentId, subjectName);
         System.out.println("Marks Detail: " + marksDetails);
 
-        float averageMarks = calculateAverage(schoolName, studentId);
+        double averageMarks = calculateAverage(schoolName, studentId);
         System.out.println("Average Marks for Student " + studentId + ": " + averageMarks);
     }
 
@@ -135,7 +135,7 @@ public class AdvancedSchoolSystem {
 
     public static Map<String, Object> getMarks(String schoolName, int studentId, String subjectName) {
         Map<Integer, Map<String, Object>> students = schoolData.get(schoolName);
-        if (students == null || !students.containsKey(studentId)) {
+        if (students == null) {
             System.out.println("Data not found.");
             return null;
         }
@@ -145,10 +145,10 @@ public class AdvancedSchoolSystem {
         return subjects.getOrDefault(subjectName, null);
     }
     //* Method for calculating the average
-    public static int calculateAverage(String schoolName, int studentId) {
+    public static double calculateAverage(String schoolName, double studentId) {
         Map<Integer, Map<String, Object>> students = schoolData.get(schoolName);
 
-        if (students == null || !students.containsKey(studentId)) {
+        if (students == null) {
             System.out.println("Student with iD " + studentId + " in " + schoolName + " not exist");
             return 0;
         }
